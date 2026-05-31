@@ -165,11 +165,11 @@ export const initAntiTamper = (onCheat: () => void) => {
   });
 
   window.addEventListener(_0x9b1e("636f6e746578746d656e75"), (e) => e.preventDefault());
-  window.addEventListener(_0x9b1e("6b6579646f776e"), (e) => {
+  window.addEventListener(_0x9b1e("6b6579646f776e"), ((e: KeyboardEvent) => {
     const _k = e.key;
     const _isF = _k === 'F12' || (e.ctrlKey && e.shiftKey && ['I', 'J', 'C'].includes(_k)) || (e.ctrlKey && ['U', 'S'].includes(_k));
     if (_isF) { e.preventDefault(); _p(); }
-  });
+  }) as EventListener);
 
   window.addEventListener(_0x9b1e("726573697a65"), () => {
     const _t = 0xA0; 
@@ -185,7 +185,7 @@ export const initAntiTamper = (onCheat: () => void) => {
 
   const _dc = () => {
     const _s = performance.now();
-    (function() { return !![]; constructor(_0x9b1e("6465627567676572"))(); })(); 
+    (function() { return true; }).constructor(_0x9b1e("6465627567676572"))(); 
     const _e = performance.now();
     if (_e - _s > (1 << 6) + (1 << 5) + 4) { _p(); }
   };
